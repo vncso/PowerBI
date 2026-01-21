@@ -1,0 +1,5 @@
+relationship efa2c6ee-9f5b-43f6-8b82-0df78bc36e36
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DadosMarketing.'Data Cadastro'
+	toColumn: LocalDateTable_28e5f871-db10-4fe2-a87c-7021314ddb1a.Date
+
