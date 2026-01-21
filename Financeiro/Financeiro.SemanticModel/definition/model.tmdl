@@ -1,0 +1,21 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DadosFinanceiros","Medidas"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DadosFinanceiros
+ref table Medidas
+ref table DateTableTemplate_ebb63003-c529-4566-80c9-04660e074dc2
+ref table LocalDateTable_0eaebcf3-8405-4db5-bf28-db5708698bab
+
+ref cultureInfo pt-BR
+

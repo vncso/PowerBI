@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "9eb0e0093b6ae61e85c7",
+  "position": {
+    "x": 202,
+    "y": 18,
+    "z": 6000,
+    "height": 328,
+    "width": 1064,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "keyDriversVisual",
+    "query": {
+      "queryState": {
+        "ExplainBy": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DadosFinanceiros"
+                    }
+                  },
+                  "Property": "Tipo"
+                }
+              },
+              "queryRef": "DadosFinanceiros.Tipo",
+              "nativeQueryRef": "Tipo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DadosFinanceiros"
+                    }
+                  },
+                  "Property": "Componente"
+                }
+              },
+              "queryRef": "DadosFinanceiros.Componente",
+              "nativeQueryRef": "Componente"
+            }
+          ]
+        },
+        "Target": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DadosFinanceiros"
+                    }
+                  },
+                  "Property": "Valor"
+                }
+              },
+              "queryRef": "DadosFinanceiros.Valor",
+              "nativeQueryRef": "Valor"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "keyDrivers": [
+        {
+          "properties": {
+            "targetValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Administrativo'''"
+                }
+              }
+            },
+            "selectedAnalysis": {
+              "expr": {
+                "Literal": {
+                  "Value": "'topProfiles'"
+                }
+              }
+            },
+            "numericTargetSelectedKind": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "allowKeyDrivers": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
