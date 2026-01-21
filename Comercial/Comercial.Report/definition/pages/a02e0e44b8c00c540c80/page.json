@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "a02e0e44b8c00c540c80",
+  "displayName": "Vendas por Região/Vendedor",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "476635e2b75d2e78d859",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vendas"
+              }
+            },
+            "Property": "Estado"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "4a5f311002032a099a99",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "28346c608a711a920402",
+        "boundFilter": "476635e2b75d2e78d859",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vendas"
+              }
+            },
+            "Property": "Estado"
+          }
+        }
+      }
+    ]
+  }
+}

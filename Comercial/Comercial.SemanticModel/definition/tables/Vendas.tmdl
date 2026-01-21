@@ -1,0 +1,141 @@
+table Vendas
+	lineageTag: d742e69a-d90b-4ea0-954d-756ef323f209
+
+	column ID-Produto
+		dataType: string
+		lineageTag: 7321d8fa-ebc5-4c64-bdaf-15a27d52dbba
+		summarizeBy: none
+		sourceColumn: ID-Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Produto
+		dataType: string
+		lineageTag: 8abbab19-2397-4d11-b2f5-58b75cdd3148
+		summarizeBy: none
+		sourceColumn: Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		dataType: string
+		lineageTag: 5e0da028-090e-4701-bd0a-b8053a814bbf
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segmento
+		dataType: string
+		lineageTag: 35186119-b2a2-48a2-bc32-f09cf3e2418d
+		summarizeBy: none
+		sourceColumn: Segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fabricante
+		dataType: string
+		lineageTag: 0dcf678d-4d73-4f29-a666-3985b82d8dda
+		summarizeBy: none
+		sourceColumn: Fabricante
+
+		annotation SummarizationSetBy = Automatic
+
+	column Loja
+		dataType: string
+		lineageTag: eb157ce0-6edc-4b2e-8ab2-0d33f867404a
+		summarizeBy: none
+		sourceColumn: Loja
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cidade
+		dataType: string
+		lineageTag: 0a0624d3-646c-420f-8712-dfb763893cd4
+		summarizeBy: none
+		sourceColumn: Cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		lineageTag: b6b9d93e-3c5b-4744-957f-48a8c2462e85
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendedor
+		dataType: string
+		lineageTag: cf84b8fc-f2d7-47c3-811d-a2b3815cb9d8
+		summarizeBy: none
+		sourceColumn: Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID-Vendedor
+		dataType: int64
+		formatString: 0
+		lineageTag: b438d2a6-7230-4a72-a46c-c2dff73f7f05
+		summarizeBy: sum
+		sourceColumn: ID-Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comissão (Percentual)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4733348a-02a0-4513-a414-f16920637bdb
+		summarizeBy: sum
+		sourceColumn: Comissão (Percentual)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Venda'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d89f0e32-328e-46ca-88bd-a593b861d33b
+		summarizeBy: none
+		sourceColumn: Data Venda
+
+		variation Variation
+			isDefault
+			relationship: f691a9f8-b94b-43ca-8204-80d1908085a5
+			defaultHierarchy: LocalDateTable_dd69a6d7-7c06-4c65-91c8-7832a60f89fa.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ValorVenda
+		dataType: double
+		lineageTag: e594c860-add2-4143-80b8-38c1c8101e01
+		summarizeBy: sum
+		sourceColumn: ValorVenda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Custo
+		dataType: int64
+		formatString: 0
+		lineageTag: 35963402-a610-49e1-90f8-8caa5a16ada6
+		summarizeBy: sum
+		sourceColumn: Custo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vendas = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\noxp\Documents\dashs\projeto4\Dados_Comerciais.xlsx"), null, true),
+				    Vendas_Sheet = Fonte{[Item="Vendas",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Vendas_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"ID-Produto", type text}, {"Produto", type text}, {"Categoria", type text}, {"Segmento", type text}, {"Fabricante", type text}, {"Loja", type text}, {"Cidade", type text}, {"Estado", type text}, {"Vendedor", type text}, {"ID-Vendedor", Int64.Type}, {"Comissão (Percentual)", Int64.Type}, {"Data Venda", type date}, {"ValorVenda", type number}, {"Custo", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
