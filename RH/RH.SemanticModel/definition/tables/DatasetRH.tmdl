@@ -1,0 +1,220 @@
+table DatasetRH
+	lineageTag: d2157ea1-2308-4c2a-9d56-964f38c71648
+
+	column Id_Funcionario
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b6af4f3-8ba9-4e38-aa3c-55acebec9e38
+		summarizeBy: sum
+		sourceColumn: Id_Funcionario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Idade
+		dataType: int64
+		formatString: 0
+		lineageTag: 43e37a42-bcdf-4ea4-b668-f08ef0aa5cb5
+		summarizeBy: sum
+		sourceColumn: Idade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genero
+		dataType: string
+		lineageTag: f8d69a2b-71fe-47a7-81b6-a54dcb86caee
+		summarizeBy: none
+		sourceColumn: Genero
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado Civil'
+		dataType: string
+		lineageTag: 92efb4ce-f171-405c-8c99-8c6eab95d175
+		summarizeBy: none
+		sourceColumn: Estado Civil
+
+		annotation SummarizationSetBy = Automatic
+
+	column Departamento
+		dataType: string
+		lineageTag: dfa0f7f3-0eba-48bc-a961-f544cc9dcd6e
+		summarizeBy: none
+		sourceColumn: Departamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Funcao
+		dataType: string
+		lineageTag: 0b79dcfa-6b67-447b-9820-1c3a82fbf5a5
+		summarizeBy: none
+		sourceColumn: Funcao
+
+		annotation SummarizationSetBy = Automatic
+
+	column Viagem
+		dataType: string
+		lineageTag: 7da15818-35ed-4df5-8549-4f0b1a496a04
+		summarizeBy: none
+		sourceColumn: Viagem
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor Diaria'
+		dataType: int64
+		formatString: 0
+		lineageTag: e492b3cc-1c50-4ba2-98fc-9d50f94b1ad6
+		summarizeBy: sum
+		sourceColumn: Valor Diaria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indice_Envolvimento_Trabalho
+		dataType: int64
+		formatString: 0
+		lineageTag: 7dc2217c-7157-4515-b9c5-075d74073061
+		summarizeBy: sum
+		sourceColumn: Indice_Envolvimento_Trabalho
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nivel_Satisfacao_Trabalho
+		dataType: int64
+		formatString: 0
+		lineageTag: 60639ca7-43d7-4461-8915-f4b8ea39aac1
+		summarizeBy: sum
+		sourceColumn: Nivel_Satisfacao_Trabalho
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salario_Mensal
+		dataType: int64
+		formatString: 0
+		lineageTag: 9cf9dd30-8c27-49d7-9ae6-cc557bdc32f6
+		summarizeBy: sum
+		sourceColumn: Salario_Mensal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Numero_Empresas_Anteriores
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d591d4d-0f41-47c2-b943-064925ecc8b3
+		summarizeBy: sum
+		sourceColumn: Numero_Empresas_Anteriores
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disponivel_Hora_Extra
+		dataType: string
+		lineageTag: 0eb6fe02-46a5-4b8e-ba21-76ba95092e9c
+		summarizeBy: none
+		sourceColumn: Disponivel_Hora_Extra
+
+		annotation SummarizationSetBy = Automatic
+
+	column Percentual_Ultimo_Aumento_Salario
+		dataType: int64
+		formatString: 0
+		lineageTag: ad9dc353-f86a-415e-b50c-5e20a37e7542
+		summarizeBy: sum
+		sourceColumn: Percentual_Ultimo_Aumento_Salario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aval_Performance
+		dataType: int64
+		formatString: 0
+		lineageTag: 572bf142-420c-42ae-b218-1bf56eaad111
+		summarizeBy: sum
+		sourceColumn: Aval_Performance
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anos_Experiencia
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c21cfa3-8b17-479b-93b9-0154f10fe1f0
+		summarizeBy: sum
+		sourceColumn: Anos_Experiencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Numero_Treinamentos_Ano_Anterior
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c28cda6-929f-4aed-8ae1-9f4407434602
+		summarizeBy: sum
+		sourceColumn: Numero_Treinamentos_Ano_Anterior
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anos_na_Empresa
+		dataType: int64
+		formatString: 0
+		lineageTag: a9436619-2cd7-47cc-bd8e-3a1c26a91ace
+		summarizeBy: sum
+		sourceColumn: Anos_na_Empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anos_Funcao_Atual
+		dataType: int64
+		formatString: 0
+		lineageTag: b8df6b84-6b12-442a-a435-5532b2718143
+		summarizeBy: sum
+		sourceColumn: Anos_Funcao_Atual
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anos_Desde_Ultima_Promocao
+		dataType: int64
+		formatString: 0
+		lineageTag: beace45e-1ff3-4fee-be3e-dcc92c3ccc44
+		summarizeBy: sum
+		sourceColumn: Anos_Desde_Ultima_Promocao
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anos_com_Gerente_Atual
+		dataType: int64
+		formatString: 0
+		lineageTag: bbc0bb83-fafa-461a-9502-1db5f22a2f5c
+		summarizeBy: sum
+		sourceColumn: Anos_com_Gerente_Atual
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusPromo
+		dataType: string
+		lineageTag: c4eba99d-b188-4a62-afc9-854da6be591c
+		summarizeBy: none
+		sourceColumn: StatusPromo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nível_Envolvimento
+		dataType: string
+		lineageTag: d1502c9d-c2a3-4538-92f5-1a2e9cc94a00
+		summarizeBy: none
+		sourceColumn: Nível_Envolvimento
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DatasetRH = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\noxp\Documents\dashs\projeto5\DatasetRH.csv"),[Delimiter=",", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Id_Funcionario", Int64.Type}, {"Idade", Int64.Type}, {"Genero", type text}, {"Estado Civil", type text}, {"Departamento", type text}, {"Funcao", type text}, {"Viagem", type text}, {"Valor Diaria", Int64.Type}, {"Indice_Envolvimento_Trabalho", Int64.Type}, {"Nivel_Satisfacao_Trabalho", Int64.Type}, {"Salario_Mensal", Int64.Type}, {"Numero_Empresas_Anteriores", Int64.Type}, {"Disponivel_Hora_Extra", type text}, {"Percentual_Ultimo_Aumento_Salario", Int64.Type}, {"Aval_Performance", Int64.Type}, {"Anos_Experiencia", Int64.Type}, {"Numero_Treinamentos_Ano_Anterior", Int64.Type}, {"Anos_na_Empresa", Int64.Type}, {"Anos_Funcao_Atual", Int64.Type}, {"Anos_Desde_Ultima_Promocao", Int64.Type}, {"Anos_com_Gerente_Atual", Int64.Type}}),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Tipo Alterado", "StatusPromo", each if [Anos_Desde_Ultima_Promocao] >= 5 then "Considerar Promoção" else if [Anos_Desde_Ultima_Promocao] < 5 then "Não Considerar Promoção" else null),
+				    #"Valor Substituído" = Table.ReplaceValue(#"Coluna Condicional Adicionada","S","Sim",Replacer.ReplaceText,{"Disponivel_Hora_Extra"}),
+				    #"Valor Substituído1" = Table.ReplaceValue(#"Valor Substituído","N","Não",Replacer.ReplaceText,{"Disponivel_Hora_Extra"}),
+				    #"Coluna Condicional Adicionada1" = Table.AddColumn(#"Valor Substituído1", "Nível_Envolvimento", each if [Indice_Envolvimento_Trabalho] = 1 then "Baixo" else if [Indice_Envolvimento_Trabalho] = 2 then "Médio" else if [Indice_Envolvimento_Trabalho] = 3 then "Alto" else if [Indice_Envolvimento_Trabalho] = 4 then "Ótimo" else null)
+				in
+				    #"Coluna Condicional Adicionada1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

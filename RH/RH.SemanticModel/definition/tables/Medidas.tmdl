@@ -1,0 +1,58 @@
+table Medidas
+	lineageTag: dae65c67-c492-48e6-bc92-7720c9a58f47
+
+	measure TotalFunc = COUNTROWS('DatasetRH')
+		formatString: 0
+		lineageTag: d32e7cd7-39a4-4fca-8f3d-94a78b627165
+
+	measure TotalFem = CALCULATE([TotalFunc], DatasetRH[Genero] = "Feminino")
+		formatString: 0
+		lineageTag: c423db9e-80c4-470e-8d41-cbebed828856
+
+	measure TotalMas = CALCULATE([TotalFunc], DatasetRH[Genero] = "Masculino")
+		formatString: 0
+		lineageTag: 8825d39c-9ead-428b-ac75-b0495614d1a3
+
+	measure '% Masculino' = DIVIDE([TotalMas], [TotalFunc], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ffc6cc04-2348-42a3-b121-499b85e86984
+
+	measure '% Feminino' = DIVIDE([TotalFem], [TotalFunc], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: fd1104e6-81d2-40cf-a1c7-72b9efb86708
+
+	measure SalarioMedio = AVERAGE(DatasetRH[Salario_Mensal])
+		lineageTag: 1d03de81-de3b-42bb-af7a-a4bdd2bf5a5c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TotalFuncPromover = CALCULATE([TotalFunc], DatasetRH[StatusPromo] = "Considerar Promoção")
+		formatString: 0
+		lineageTag: 3c263cdb-ffec-481a-a5a9-b727bb1fb971
+
+	measure TotalFuncNaoPromover = CALCULATE([TotalFunc], DatasetRH[StatusPromo] = "Não Considerar Promoção")
+		formatString: 0
+		lineageTag: 98fc916f-6723-49b0-8365-297bc125f3d0
+
+	measure '% Promover' = DIVIDE([TotalFuncPromover], [TotalFunc])
+		lineageTag: 91a9c9a0-66b9-4ca6-9ac3-868f0577fe91
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Não Promover' = DIVIDE([TotalFuncNaoPromover], [TotalFunc])
+		lineageTag: 58364f97-da44-479f-afb9-9e499bb1b213
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+
